@@ -9,7 +9,8 @@ $('.callButton').click(function() {
         success: function(result) {
             console.log(result);
             chuck = result;
-            $('#returnDiv').append(chuck.value);
+            $('#returnDiv').append(chuck.value,'<br/>',chuck.id,'<br/>');
+            // $('#returnDiv').after('<br/>');
             console.log(chuck.id);
             console.log(chuck.value);
         },
