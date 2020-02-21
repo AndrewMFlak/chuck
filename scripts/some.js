@@ -1,5 +1,5 @@
 console.log("hello js file");
-var chuck = {};
+var chuckPlaceholder = {};
 
 const Url = ("https://api.chucknorris.io/jokes/random");
 $('.callButton').click(function() {
@@ -9,14 +9,16 @@ $('.callButton').click(function() {
         success: function(result) {
             console.log(result);
             chuck = result;
-            $('#returnDiv').append(chuck);
-            var chuckId = chuck.id;
-            var chuckJoke = chuck.value;
-            console.log(chuckId);
-            console.log(chuckJoke);
+            $('#returnDiv').append(chuck.value);
+            console.log(chuck.id);
+            console.log(chuck.value);
         },
         error:function(error){
             console.log(`Error ${error}`)
         }
     });
 });
+
+$('.clearButton').click(function() {
+    $('#returnDiv').empty();
+})
